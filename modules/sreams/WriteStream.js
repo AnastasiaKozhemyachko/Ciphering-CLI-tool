@@ -2,16 +2,15 @@ const fs = require("fs");
 const path = require('path');
 
 const getParam = require("./../tools/getParam");
+const existPathValidator = require("../validators/existPathValidator");
 
 const pathFile = getParam('-o');
 
-let writeStream;
+const hasExistPath  = existPathValidator(
+    pathFile,
+    false,
+);
 
-if(fs.existsSync(path.join(__dirname, './../../', pathFile))) {
-    writeStream = fs.createWriteStream(path.join(__dirname, './../../' , pathFile), {flags:'a'})
-} else {
-    process.stderr.write('Output directory is not exist');
-    process.exit(1);
-}
+const stream = fs.createWriteStream(path.join(__dirname, './../../', pathFile), {flags:'a'})
 
-module.exports = writeStream;
+module.exports = hasExistPath ? stream : false;

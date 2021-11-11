@@ -1,4 +1,3 @@
-const stream = require("stream");
 const getParam = require("./../tools/getParam");
 const CaesarCipher = require('./../sreams/transform/CaesarCipher');
 const Rot8Cipher = require('./../sreams/transform/Rot8Cipher');
