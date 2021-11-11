@@ -2,6 +2,9 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = function existPathValidator(pathFile, isInput) {
+    if(!pathFile) {
+        return false;
+    }
     if(!fs.existsSync(path.join(__dirname, '..', '..', pathFile))) {
         process.stderr.write(`${isInput ? 'Input' : "Output"} directory is not exist`);
         process.exit(1);

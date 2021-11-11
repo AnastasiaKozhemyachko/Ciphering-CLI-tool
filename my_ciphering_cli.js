@@ -7,9 +7,6 @@ const writeStream = require("./modules/sreams/WriteStream");
 
 const createCiphersArray = createCiphers();
 
-
-//path.join(__dirname),
-
 pipeline(
     readStream,
     ...createCiphersArray,
