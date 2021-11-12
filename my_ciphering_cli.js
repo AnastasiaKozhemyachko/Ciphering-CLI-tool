@@ -8,8 +8,11 @@ const writeStream = require("./modules/sreams/WriteStream");
 const createCiphersArray = createCiphers();
 
 pipeline(
-    readStream || process.stdin,
+    readStream,
     ...createCiphersArray,
-    writeStream || process.stdout,
-    err => {}
+    writeStream,
+    err => {
+        process.stderr.write('Error');
+        process.exit(1);
+    }
 )
