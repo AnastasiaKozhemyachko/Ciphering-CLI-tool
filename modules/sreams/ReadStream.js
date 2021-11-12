@@ -1,5 +1,4 @@
 const fs = require("fs");
-const readline = require("readline");
 const path = require('path');
 
 const getParam = require("./../tools/getParam");
@@ -14,12 +13,9 @@ const hasExistPath  = existPathValidator (
 );
 
 if (!pathFile) {
-    stream = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
+    stream = false;
 } else if(hasExistPath) {
     stream = fs.createReadStream(path.join(__dirname, './../../', pathFile), {flags:'r'})
 }
 
-module.exports = stream;
+module.exports = stream ? stream : false;
