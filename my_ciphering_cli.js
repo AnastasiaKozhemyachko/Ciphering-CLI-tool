@@ -12,7 +12,9 @@ pipeline(
     ...createCiphersArray,
     writeStream,
     err => {
-        process.stderr.write('Error');
-        process.exit(1);
+        if(err) {
+            process.stderr.write('Error');
+            process.exit(1);
+        }
     }
 )
