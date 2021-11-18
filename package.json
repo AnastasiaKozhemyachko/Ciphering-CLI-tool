@@ -4,12 +4,17 @@
   "description": "",
   "main": "my_ciphering_cli.js",
   "scripts": {
-    "start": "node my_ciphering_cli -c \"A-A-A-R1-R0-R0-R0-C1-C1-A\" -i \"./input.txt\" -o \"./output.txt\""
+    "start": "node my_ciphering_cli -c \"A-A-A-R1-R0-R0-R0-C1-C1-A\" -i \"./input.txt\" -o \"./output.txt\"",
+    "test": "jest",
+    "test-coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AnastasiaKozhemyachko/Ciphering-CLI-tool.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
 }
