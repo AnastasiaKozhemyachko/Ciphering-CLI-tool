@@ -2,7 +2,6 @@ const duplicateValidator = require("./../../modules/validators/duplicateValidato
 
 describe('duplicateValidator', () => {
     const duplicateValidatorRef = {duplicateValidator};
-
     let spyDuplicateValidator;
 
     beforeEach(() => {
