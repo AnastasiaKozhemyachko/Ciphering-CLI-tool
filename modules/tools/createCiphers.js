@@ -9,10 +9,7 @@ const config = getParam('-c');
 module.exports = function createCiphers() {
     const arrayOfConfig = config.split('-');
 
-    if(!configurationValidator(arrayOfConfig)) {
-        process.stderr.write('configuration is wrong');
-        process.exit(1);
-    }
+    configurationValidator(arrayOfConfig)
 
     const arrayOfCiphers = [];
 

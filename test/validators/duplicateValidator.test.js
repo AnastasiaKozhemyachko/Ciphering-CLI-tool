@@ -1,9 +1,7 @@
 const duplicateValidator = require("./../../modules/validators/duplicateValidator");
 
 describe('duplicateValidator', () => {
-    const duplicateValidatorRef = {
-        duplicateValidator
-    };
+    const duplicateValidatorRef = {duplicateValidator};
 
     let spyDuplicateValidator;
 
@@ -20,7 +18,7 @@ describe('duplicateValidator', () => {
         expect(spyDuplicateValidator).toHaveBeenCalled();
     })
 
-    it('should be called process.exit', () => {
+    it('should be called process.exit, when params are duplicated', () => {
         const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
         duplicateValidatorRef.duplicateValidator(['-o', '-o'], '-o');
         expect(mockExit).toHaveBeenCalled();

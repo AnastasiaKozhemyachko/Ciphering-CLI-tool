@@ -6,7 +6,8 @@ module.exports = function getParam(param) {
 
     const indexOf = process.argv.indexOf(param);
     if (indexOf === -1) {
-        return null;
+        process.stderr.write(`There is no ${param}`);
+        process.exit(1);
     }
     return process.argv[indexOf + 1];
 };
